@@ -1,9 +1,5 @@
-from flask import Flask, jsonify
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return jsonify({'message': 'AuditShield AI backend is running'})
-
-if __name__ == '__main__':
-    app.run(debug=True)
+fetch("https://auditshield-backend.onrender.com/")
+  .then(response => response.json())
+  .then(data => {
+    document.body.innerHTML += `<h1>${data.message}</h1>`;
+  });
